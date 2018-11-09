@@ -15,8 +15,9 @@ public class BankMain {
     static Connection conn = null;
     public static Statement stmt = null;
     static double amount;
+    static int threadNum;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("How many ATMs would you like to run?");
         int atm_num = sc.nextInt();
         enterUserInfo();
@@ -30,8 +31,9 @@ public class BankMain {
         }
         Account acc[] = new Account[atm_num];
         for (int i = 0; i < atm_num; i++){
-            acc[i] = new Account(account_id, amount);
-            acc[i].start();
+            threadNum = i;
+            acc[i] = new Account(account_id, amount, threadNum);
+            acc[i].run();
         }
     }
 
