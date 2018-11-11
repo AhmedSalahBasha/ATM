@@ -80,7 +80,7 @@ public class Account implements Runnable {
         }
     }
 
-    public void deposit(int account_id, double deposit) throws SQLException {
+    public synchronized void deposit(int account_id, double deposit) throws SQLException {
         try {
             conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             conn.setAutoCommit(false);
@@ -104,7 +104,7 @@ public class Account implements Runnable {
         }
     }
 
-    public void withdraw(int account_id, double withdraw) throws SQLException{
+    public synchronized void withdraw(int account_id, double withdraw) throws SQLException{
         balance = getBalance(account_id);
         newBalance = balance - withdraw;
         if (newBalance < 0) {
@@ -159,9 +159,6 @@ public class Account implements Runnable {
             while (rs.next()){
                 current_balance = rs.getDouble("balance");
             }
-            sql = "UNLOCK TABLES;";
-            stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
             stmt.close();
         }
         catch (SQLException e) {
