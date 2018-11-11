@@ -8,9 +8,9 @@ public class ConnectDB {
     static Connection conn = null;
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     //atmdbid.c17htg3hsf6i.eu-central-1.rds.amazonaws.com
-    static final String DB_URL = "jdbc:mysql://atmdbid.c17htg3hsf6i.eu-central-1.rds.amazonaws.com:3306";
-    static final String USER = "atm_db_username";
-    static final String PASS = "atmpassword";
+    static final String DB_URL = "jdbc:mysql://localhost:3306";
+    static final String USER = "admin";
+    static final String PASS = "Abo_Salah93";
 
     public static Connection connect() {
         try {

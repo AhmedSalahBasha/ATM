@@ -63,7 +63,8 @@ public class BankMain {
         System.out.println("\nATM Menu: \n \n"
                 + "1. Deposit \n"
                 + "2. Withdraw \n"
-                + "3. End Session\n \n"
+                + "3. Display Balance \n"
+                + "4. End Session\n \n"
                 + "Enter selection: ");
         selection = sc.nextInt(); // assign the user's input to the selection variable
         if (selection == 1) {
