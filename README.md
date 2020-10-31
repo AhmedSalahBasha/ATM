@@ -1,8 +1,6 @@
 # Implementing an Automated Teller Machine (ATM) System
 ATM System Handels Concurrent Transactions
 
-<hr/>
-
 ### Relational Database Backend
 As a first step, deploy a relational database to the cloud. As shown in the exercise, we recommend to deploy a MySQL database to Amazon Web Services (AWS) by using its Relational Database Service (RDS).
 However, you are free to choose another provider or database implementation.
