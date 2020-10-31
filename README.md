@@ -1,10 +1,12 @@
-<h1>Implementing an Automated Teller Machine (ATM) System</h1><br/>
-<h3>Relational Database Backend</h3>
+# Implementing an Automated Teller Machine (ATM) System
+ATM System Handels Concurrent Transactions
+<hr/>
+### Relational Database Backend
 As a first step, deploy a relational database to the cloud. As shown in the exercise, we recommend to deploy a MySQL database to Amazon Web Services (AWS) by using its Relational Database Service (RDS).
 However, you are free to choose another provider or database implementation.
 Create a simple and sensible database scheme that allows you to keep track of account balances.
 
-<h3>ATM Java Client</h3>
+### ATM Java Client
 Develop a Java ATM client that provides a command line interface (cli) offering the following common ATM functionality to the user: 
 A customer must be able to…
   <li>login using her account number and corresponding pin code.</li>
@@ -12,7 +14,7 @@ A customer must be able to…
   <li>display her account balance.</li>
 Make sure that the operation’s results adequately reflect in the database.
 
-<h3>Concurrent Access</h3>
+### Concurrent Access
 In the real world, many ATM transactions happen in parallel. Under all circumstances, our system needs to ensure key invariants globally – even in case of concurrent transactions.
 In our case, this means that the account balance must not be negative! This constraint must hold even in case of concurrent transaction. 
 Please assume that multiple ATMs (instances of the Java client) exist and customers may have access to the same account such that they can withdraw money
